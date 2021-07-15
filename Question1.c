@@ -1,51 +1,31 @@
-/*Write a program which accept number from user and return the count of even
-digits.
-Input :2395
-Output : 1
-
-Input : 1018
-Output : 2
-
-Input :-1018
-Output : 2
-
-Input : 8462
-Output : 4
+/* Accept number from user and display below pattern.
+Input : 5
+Output : A B C D E
 */
 
 #include<stdio.h>
-
-int CountEven(int iNo)
+void Pattern(int iNo)
 {
-    int iDigit=0,iCnt=0;
+    int i=0;
+    char ch='A';
     if(iNo<0)
     {
         iNo=-iNo;
     }
-    while(iNo>0)
+    for(i=0;i<iNo;i++)
     {
-        iDigit=iNo%10;
-        
-        if((iDigit%2)==0)
-        {
-          iCnt++;
-        }
-
-        iNo=iNo/10;
+        printf("%c\t",ch);
+        ch++;
     }
-    return iCnt;
 }
 int main()
 {
     int iValue=0;
-    int iRet=0;
 
-    printf("Enter a number:");
+    printf("Enter number of elements:");
     scanf("%d",&iValue);
-    
-    iRet=CountEven(iValue);
 
-    printf("Even number present in given value is:%d",iRet);
-    
+    Pattern(iValue);
+
     return 0;
 }

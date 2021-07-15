@@ -1,59 +1,30 @@
-/*Write a program which accept number from user and return multiplication of all
-digits.
-Input : 2395
-Output : 270
-
-Input :1018
-Output : 8
-
-Input :9440
-Output :144
-
-Input :922432
-Output :  864
+/* Accept number from user and display below pattern.
+Input : 4
+Output : # 1 * # 2 * # 3 * # 4 *
 */
-
 #include<stdio.h>
 
-int MultDigits(int iNo)
+void Pattern(int iNo)
 {
-    int iDigit=0;
-    int iMult=1;
+    int i=0;
     if(iNo<0)
     {
         iNo=-iNo;
     }
-    if(iNo==0)
+
+    for(i=1;i<=iNo;i++)
     {
-        return 0;
+        printf("#\t%d\t*\t",i);
     }
-    while(iNo>0)
-    {
-        iDigit=iNo%10;
-        if(iDigit==0)
-        {
-            iNo=iNo/10;
-        }
-        else
-        {
-           iMult=iMult*iDigit;
-           iNo=iNo/10;
-        }
-        
-    }
-    return iMult;
+
 }
 int main()
 {
     int iValue=0;
-    int iRet=0;
 
-    printf("Enter a number:");
+    printf("Enter number of elements:");
     scanf("%d",&iValue);
-    
-    iRet=MultDigits(iValue);
 
-    printf("The multiplication of the digtits are:%d",iRet);
-    
+    Pattern(iValue);
     return 0;
 }

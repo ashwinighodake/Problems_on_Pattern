@@ -1,50 +1,30 @@
-/*Write a program which accept number from user and return the count of odd
-digits.
-Input :2395
-Output : 3
-
-Input :1018
-Output : 2
-
-Input :-1018
-Output : 2
-
-Input : 8462
-Output : 0
+/* Accept number from user and display below pattern.
+Input : 5
+Output : 5 # 4 # 3 # 2 # 1 #
 */
-
 #include<stdio.h>
-int CountOdd(int iNo)
+
+void Pattern(int iNo)
 {
-    int iDigit=0,iCnt=0;
+    int i=0;
     if(iNo<0)
     {
         iNo=-iNo;
     }
-    while(iNo>0)
+    for(i=iNo;i>0;i--)
     {
-        iDigit=iNo%10;
-        
-        if((iDigit%2)!=0)
-        {
-          iCnt++;
-        }
-
-        iNo=iNo/10;
+        printf("%d\t#\t",i);
     }
-    return iCnt;
 }
+
 int main()
 {
     int iValue=0;
-    int iRet=0;
 
-    printf("Enter a number:");
+    printf("Enter number of elements:");
     scanf("%d",&iValue);
-    
-    iRet=CountOdd(iValue);
 
-    printf("Odd number present in given value is:%d",iRet);
-    
+    Pattern(iValue);
     return 0;
+
 }
